@@ -1,0 +1,23 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
+  roles:
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: "{{ ansible_user }}"
+          oh_my_zsh:
+            theme: powerlevel10k/powerlevel10k
+            plugins: "{{ plugins }}"
+
+  tasks:
+    - import_tasks: tasks/configure.yml

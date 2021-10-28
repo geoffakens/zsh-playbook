@@ -1,0 +1,17 @@
+---
+# These are the defaults I like for MacOS
+plugins:
+  - brew
+  - docker
+  - git
+  - helm
+  - kubectl
+  - npm
+  - sublime
+  - sublime-merge
+  - sudo
+  - tmux
+  - vagrant
+  - vscode
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
